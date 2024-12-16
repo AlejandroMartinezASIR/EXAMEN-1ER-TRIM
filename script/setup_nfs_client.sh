@@ -21,3 +21,4 @@ sudo mount $NFS_SERVER_IP:/var/www/html /var/www/html
 sudo mount $NFS_SERVER_IP:/var/moodledata /var/moodledata
 
 echo "$NFS_SERVER_IP:/var/www/html /var/www/html  nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0" >> /etc/fstab
+echo "$NFS_SERVER_IP:/var/moodledata /var/moodledata  nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0" >> /etc/fstab
