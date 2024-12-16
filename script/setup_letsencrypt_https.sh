@@ -1,16 +1,23 @@
 #!/bin/bash
 
+#Mostrar los comandos que se van ejecutando
 set -ex
 
+#Importamos las variables de entorno
 source .env
 
-snap install core
-snap refresh core
+# Instalamos y Actualizamos snap
+sudo snap install core
+sudo snap refresh core
 
-apt remove certbot
+# Eliminamos instalaciones previas de cerbot con apt
+apt remove certbot -y
 
+# Instalamos el cliente de cerbot
 snap install --classic certbot
 
-ln -sf /snap/bin/certbot /usr/bin/certbot 
+# Creamos un alias para el comando cerbot
+ln -fs /snap/bin/cerbot /usr/bin/cerbot
 
-certbot --apache -m $moodle_admin_email --agree-tos --no-eff-email -d $LE_DOMAIN --non-interactive
+# Solicitamos un certificado a Let´s Encrypt
+sudo certbot --nginx -m $moodle_admin_email --agree-tos --no-eff-email -d $LE_DOMAIN --non-interactive
