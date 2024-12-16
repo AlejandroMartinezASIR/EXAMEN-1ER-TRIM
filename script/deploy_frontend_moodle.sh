@@ -25,13 +25,13 @@ sudo chown -R www-data:www-data /var/www/html/
 
 sudo chmod -R 755 /var/www/html/
 
-sudo rm -rf /var/www/moodledata
+sudo rm -rf /var/moodledata
 
-sudo mkdir /var/www/moodledata
+sudo mkdir /var/moodledata
 
-sudo chown -R www-data:www-data /var/www/moodledata
+sudo chown -R www-data:www-data /var/moodledata
 
-sudo chmod -R 077 /var/www/moodledata
+sudo chmod -R 077 /var/moodledata
 
 sudo chmod +x /var/www/html/moodle-4.3.1/admin/cli/install.php
 

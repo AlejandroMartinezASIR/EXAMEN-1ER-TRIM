@@ -15,9 +15,6 @@ apt upgrade -y
 # Instalamos el cliente NFS 
 apt install nfs-common -y
 
-# Creamos la carpeta moodledata
-mkdir -p /var/moodledata
-
 #  Creamos el punto de montaje en el cliente NFS
 sudo mount $NFS_SERVER_IP:/var/www/html /var/www/html
 sudo mount $NFS_SERVER_IP:/var/moodledata /var/moodledata
