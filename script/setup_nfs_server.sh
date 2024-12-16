@@ -27,7 +27,7 @@ sudo chown nobody:nogroup /var/moodledata
 cp ../nfs/exports /etc/exports
 
 # Reemplazamos el valor de la plantilla de /etc/exports
-sed -i "s/FRONTEND_NETWORK/$FRONTEND_NETWORK/" /etc/exports
+sed -i "s#FRONTEND_NETWORK#$FRONTEND_NETWORK#" /etc/exports
 
 #Reiniciamos el servicio de NFS
 systemctl restart nfs-kernel-server 
